@@ -1,0 +1,370 @@
+{
+  "emails": [
+    {
+      "id": "email_001",
+      "timestamp": "2025-11-02T08:15:00Z",
+      "from": {
+        "name": "Captain James Morrison",
+        "email": "captain.morrison@oceanliner.com",
+        "role": "Captain",
+        "vessel": "MV Pacific Star",
+        "imo_number": "IMO 9876543"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "Request: Loading Schedule and ETA - MV Pacific Star - Long Beach",
+      "body": "Dear Michael,\n\nGood morning. We departed Singapore and are currently en route to Long Beach with cargo. Could you please check the loading schedule and confirm our expected time of arrival (ETA) at Long Beach terminal?\n\nCurrent vessel position: 15°30'N, 135°45'E (Mid-Pacific)\nEstimated arrival: November 5, 2025, 09:00 hours PST\nCargo: 2,500 TEU containers from Singapore\nVoyage: Singapore to Long Beach, California\n\nPlease coordinate with port authority and terminal for berth allocation.\n\nBest regards,\nCaptain James Morrison\nMV Pacific Star",
+      "priority": "high",
+      "attachments": []
+    },
+    {
+      "id": "email_002",
+      "timestamp": "2025-11-02T10:30:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "Sarah Williams",
+        "email": "s.williams@polb.com",
+        "role": "Port Operations Manager",
+        "organization": "Port of Long Beach Authority"
+      },
+      "subject": "Vessel Arrival Notification - MV Pacific Star (IMO 9876543)",
+      "body": "Dear Sarah,\n\nI am writing to inform you of the arrival of MV Pacific Star at Port of Long Beach.\n\nVessel Details:\n- Vessel Name: MV Pacific Star\n- IMO Number: 9876543\n- Flag: Panama\n- GT: 45,000\n- LOA: 260 meters\n- Expected Time of Arrival (ETA): November 5, 2025, 09:00 hours PST\n- Last Port: Singapore\n- Cargo: 2,500 TEU containers (import from Asia)\n- Purpose: Container discharge and loading\n\nKindly provide approval for the vessel's entry and berthing arrangements at Long Beach terminal.\n\nWe await your confirmation.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc\nLicense No: USCG-LSA-2024-5678",
+      "priority": "high",
+      "attachments": [
+        "crew_list.pdf",
+        "cargo_manifest.pdf",
+        "vessel_certificate.pdf"
+      ]
+    },
+    {
+      "id": "email_003",
+      "timestamp": "2025-11-02T10:45:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "David Park",
+        "email": "operations@lbterminal.com",
+        "role": "Terminal Operations Manager",
+        "organization": "Long Beach Container Terminal"
+      },
+      "subject": "Berth Availability Request - MV Pacific Star - ETA Nov 5, 09:00 PST",
+      "body": "Dear David,\n\nI hope this email finds you well. I would like to check the berth availability for the following vessel arriving from Singapore:\n\nVessel Name: MV Pacific Star\nIMO Number: 9876543\nETA: November 5, 2025, 09:00 hours PST\nLOA: 260 meters\nCargo Operations: Discharge 1,200 TEU / Load 1,800 TEU\nEstimated Duration: 18-20 hours\n\nCould you please confirm berth availability and provide the berth assignment at Long Beach Container Terminal?\n\nThank you for your assistance.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc\nMobile: +1-562-555-4567",
+      "priority": "high",
+      "attachments": []
+    },
+    {
+      "id": "email_004",
+      "timestamp": "2025-11-02T13:20:00Z",
+      "from": {
+        "name": "Sarah Williams",
+        "email": "s.williams@polb.com",
+        "role": "Port Operations Manager",
+        "organization": "Port of Long Beach Authority"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "RE: Vessel Arrival Notification - MV Pacific Star - APPROVED",
+      "body": "Dear Michael,\n\nThank you for your notification. We have reviewed the documentation for MV Pacific Star.\n\nPort Entry Approval: GRANTED\nApproval Reference: POLB-2025-1145\nPilot Boarding Time: November 5, 2025, 08:00 hours PST\nPilot Boarding Location: Los Angeles/Long Beach Pilot Station (33°42'N, 118°15'W)\n\nPlease ensure:\n1. Vessel maintains VHF Channel 12 for pilot communication\n2. All pre-arrival documentation is complete\n3. Captain confirms readiness 2 hours before ETA\n4. U.S. Customs and Border Protection (CBP) advance notification completed\n\nVessel is cleared for entry subject to CBP, Coast Guard, and health clearance.\n\nBest regards,\nSarah Williams\nPort Operations Manager\nPort of Long Beach Authority\nDirect: +1-562-283-5678",
+      "priority": "high",
+      "attachments": [
+        "port_entry_clearance.pdf"
+      ]
+    },
+    {
+      "id": "email_005",
+      "timestamp": "2025-11-02T13:45:00Z",
+      "from": {
+        "name": "David Park",
+        "email": "operations@lbterminal.com",
+        "role": "Terminal Operations Manager",
+        "organization": "Long Beach Container Terminal"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "RE: Berth Availability Request - MV Pacific Star - CONFIRMED",
+      "body": "Dear Michael,\n\nBerth availability confirmed for MV Pacific Star.\n\nBerth Assignment: Berth E-7, Pier E Complex\nBerthing Window: November 5, 2025, 09:00 - November 6, 2025, 05:00\nCrane Allocation: 3 x Super Post-Panamax Cranes\nYard Space: Stack Area E-15 to E-18\n\nPlease confirm the following:\n- Vessel's cargo plan\n- Dangerous goods declaration (if any)\n- Special handling requirements\n- USDA agricultural inspection requirements\n\nOur terminal is ready to receive the vessel as scheduled.\n\nBest regards,\nDavid Park\nTerminal Operations Manager\nLong Beach Container Terminal\nDirect: +1-562-446-7890",
+      "priority": "high",
+      "attachments": [
+        "berth_plan.pdf"
+      ]
+    },
+    {
+      "id": "email_006",
+      "timestamp": "2025-11-02T14:30:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "Captain James Morrison",
+        "email": "captain.morrison@oceanliner.com",
+        "role": "Captain",
+        "vessel": "MV Pacific Star"
+      },
+      "subject": "Port Arrangements Confirmed - MV Pacific Star - Long Beach - All Details",
+      "body": "Dear Captain Morrison,\n\nGood news! All arrangements for your arrival at Long Beach have been confirmed.\n\n=== PORT OF LONG BEACH AUTHORITY APPROVAL ===\nStatus: APPROVED\nApproval Reference: POLB-2025-1145\nPilot Boarding Time: November 5, 2025, 08:00 hours PST\nPilot Boarding Location: LA/Long Beach Pilot Station (33°42'N, 118°15'W)\nVHF Channel: 12\n\n=== TERMINAL ASSIGNMENT ===\nBerth: Berth E-7, Pier E Complex\nBerthing Window: Nov 5, 09:00 - Nov 6, 05:00 PST\nCrane Allocation: 3 x Super Post-Panamax Cranes\nYard Space: Stack Area E-15 to E-18\n\nREQUIREMENTS:\n1. Maintain VHF Channel 12 for pilot communication\n2. Confirm readiness 2 hours before ETA (by 07:00 hours PST on Nov 5)\n3. Please send updated vessel position and following documents:\n   - Final cargo plan\n   - Crew effects declaration\n   - Ship's stores declaration\n   - Maritime declaration of health\n   - U.S. Customs advance manifest\n\nEverything is set for smooth operations at Long Beach.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc",
+      "priority": "high",
+      "attachments": [
+        "port_entry_clearance.pdf",
+        "berth_plan.pdf"
+      ]
+    },
+    {
+      "id": "email_007",
+      "timestamp": "2025-11-03T06:45:00Z",
+      "from": {
+        "name": "Captain James Morrison",
+        "email": "captain.morrison@oceanliner.com",
+        "role": "Captain",
+        "vessel": "MV Pacific Star"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "Updated Vessel Position and Required Documents - MV Pacific Star",
+      "body": "Dear Michael,\n\nThank you for the arrangements. Here is our updated position and all required documents.\n\n=== UPDATED VESSEL POSITION ===\nDate/Time: November 3, 2025, 06:30 UTC\nLatitude: 28°15'N\nLongitude: 142°30'W\nSpeed: 14.5 knots\nCourse: 065° (Northeast toward California coast)\nDistance to LA/Long Beach Pilot Station: 1,850 nautical miles\nRevised ETA: November 5, 2025, 09:00 hours PST (confirmed)\n\nAll systems operational. Weather conditions favorable. Vessel is in good condition and ready for port operations.\n\nPlease find attached required documents as requested:\n- Final cargo plan\n- Crew effects declaration\n- Ship's stores declaration\n- Maritime declaration of health\n- Crew list (updated)\n- U.S. Customs advance manifest\n\nWe will confirm readiness at 07:00 hours PST on November 5 as required.\n\nBest regards,\nCaptain James Morrison\nMV Pacific Star\nSat Phone: +870-773-123-456",
+      "priority": "high",
+      "attachments": [
+        "final_cargo_plan.pdf",
+        "crew_effects_declaration.pdf",
+        "ships_stores_declaration.pdf",
+        "maritime_health_declaration.pdf",
+        "crew_list_updated.pdf",
+        "us_customs_manifest.pdf"
+      ]
+    },
+    {
+      "id": "email_008",
+      "timestamp": "2025-11-03T10:15:00Z",
+      "from": {
+        "name": "David Park",
+        "email": "operations@lbterminal.com",
+        "role": "Terminal Operations Manager",
+        "organization": "Long Beach Container Terminal"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "URGENT: Schedule Change Request - Another Vessel Emergency",
+      "body": "Dear Michael,\n\nWe have an urgent situation that requires your immediate attention.\n\nMV Global Express (operated by Company X Maritime) currently at Berth E-5 has experienced a critical engine failure. They need to complete cargo operations and vacate the berth immediately for emergency repairs at shipyard. This is creating a domino effect on our berth schedule.\n\nREQUEST:\nCan MV Pacific Star arrive ONE DAY EARLIER than currently scheduled?\n\nProposed new schedule:\n- New ETA: November 4, 2025, 09:00 hours PST (TOMORROW)\n- Berth: Berth E-7, Pier E Complex (same as originally assigned)\n- All other arrangements remain the same\n\nThis would help us tremendously and allow Company X vessel to proceed for repairs at Todd Shipyard. \n\nUNDERSTAND THIS IS VERY SHORT NOTICE, but could you please:\n1. Check with Captain Morrison regarding operational feasibility\n2. Confirm if vessel can increase speed to arrive earlier\n3. Let us know ASAP if this is possible\n\nWe will coordinate with Port Authority for expedited clearance if vessel can accommodate this change.\n\nTime-sensitive matter. Please respond urgently.\n\nBest regards,\nDavid Park\nTerminal Operations Manager\nLong Beach Container Terminal\nMobile: +1-562-400-5432",
+      "priority": "urgent",
+      "attachments": []
+    },
+    {
+      "id": "email_009",
+      "timestamp": "2025-11-03T10:30:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "Captain James Morrison",
+        "email": "captain.morrison@oceanliner.com",
+        "role": "Captain",
+        "vessel": "MV Pacific Star"
+      },
+      "subject": "URGENT: Request for Early Arrival - Critical Situation at Long Beach Terminal",
+      "body": "Dear Captain Morrison,\n\nWe have just received an urgent request from Long Beach Container Terminal that requires your immediate consideration.\n\nSITUATION:\nAnother vessel (MV Global Express - Company X Maritime) at the terminal has suffered a critical engine failure. The terminal is requesting if MV Pacific Star can arrive ONE DAY EARLIER to help accommodate the emergency situation.\n\nCURRENT ETA: November 5, 2025, 09:00 hours PST\nREQUESTED NEW ETA: November 4, 2025, 09:00 hours PST (TOMORROW)\n\nQUESTIONS:\n1. What is your current position and distance to LA/Long Beach pilot station?\n2. Is it operationally feasible to increase vessel speed?\n3. Can you arrive at pilot station by 08:00 hours PST tomorrow?\n4. Are there any safety or operational concerns with early arrival?\n5. What speed would be required and is it within vessel's capability?\n\nBerth E-7 will still be assigned to you. All other arrangements remain the same. Port of Long Beach Authority will expedite clearance if you can accommodate.\n\nI understand this is very short notice. Please advise on feasibility as soon as possible.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc\nMobile: +1-562-555-4567",
+      "priority": "urgent",
+      "attachments": []
+    },
+    {
+      "id": "email_010",
+      "timestamp": "2025-11-03T11:05:00Z",
+      "from": {
+        "name": "Captain James Morrison",
+        "email": "captain.morrison@oceanliner.com",
+        "role": "Captain",
+        "vessel": "MV Pacific Star"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "RE: URGENT Request for Early Arrival - CONFIRMED POSSIBLE",
+      "body": "Dear Michael,\n\nI have reviewed the request and assessed our operational capability.\n\nCONFIRMATION: EARLY ARRIVAL IS POSSIBLE\n\n=== CURRENT STATUS ===\nCurrent Position (as of 11:00 UTC): 29°45'N, 140°15'W\nDistance to LA/Long Beach Pilot Station: 1,520 nautical miles\nCurrent Speed: 14.5 knots\n\n=== REVISED PLAN ===\nWe will increase vessel speed to 19.5 knots\nNew ETA at Pilot Station: November 4, 2025, 08:00 hours PST\nNew Berthing Time: November 4, 2025, 09:00 hours PST\n\nOPERATIONAL ASSESSMENT:\n✓ Main engine can safely operate at increased RPM\n✓ Weather conditions favorable for higher speed across Pacific\n✓ Fuel sufficient for speed increase\n✓ All crew prepared and ready\n✓ All documents already submitted\n✓ Vessel is in good condition - no safety concerns\n\nWe are already increasing speed and adjusting course for the new schedule. Vessel performance is excellent.\n\nPlease coordinate with:\n1. Port of Long Beach Authority for updated pilot boarding time (08:00 PST tomorrow)\n2. Terminal for confirmation of berth readiness\n3. U.S. Customs and Border Protection for early processing\n\nWe are committed to helping resolve this emergency situation. Will maintain contact on VHF Ch 12.\n\nBest regards,\nCaptain James Morrison\nMV Pacific Star\nSat Phone: +870-773-123-456",
+      "priority": "urgent",
+      "attachments": []
+    },
+    {
+      "id": "email_011",
+      "timestamp": "2025-11-03T11:20:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "Sarah Williams",
+        "email": "s.williams@polb.com",
+        "role": "Port Operations Manager",
+        "organization": "Port of Long Beach Authority"
+      },
+      "subject": "URGENT: Schedule Change Request - MV Pacific Star - Early Arrival",
+      "body": "Dear Sarah,\n\nWe have an urgent schedule change for MV Pacific Star due to an emergency situation at Long Beach Container Terminal.\n\nORIGINAL SCHEDULE:\n- ETA: November 5, 2025, 09:00 hours PST\n- Pilot Boarding: November 5, 2025, 08:00 hours PST\n- Approval Reference: POLB-2025-1145\n\nREVISED SCHEDULE REQUEST:\n- New ETA: November 4, 2025, 09:00 hours PST (TOMORROW)\n- New Pilot Boarding: November 4, 2025, 08:00 hours PST\n- Same berthing location: Berth E-7, Pier E Complex\n\nREASON FOR CHANGE:\nMV Global Express (Company X) has suffered engine failure. Terminal has requested MV Pacific Star to arrive early to help accommodate the emergency and allow MV Global Express to proceed to Todd Shipyard for repairs.\n\nCaptain Morrison has confirmed:\n✓ Vessel is increasing speed from 14.5 to 19.5 knots\n✓ Operationally feasible and safe\n✓ All documentation already submitted\n✓ Vessel ready for early arrival\n\nREQUEST:\nCould you please:\n1. Approve the schedule change\n2. Arrange pilot for 08:00 hours PST tomorrow (if available)\n3. Coordinate with CBP/Coast Guard for early processing\n4. Update port entry clearance\n\nWe understand this is short notice and appreciate your flexibility in this emergency situation.\n\nPlease confirm approval urgently.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc\nMobile: +1-562-555-4567",
+      "priority": "urgent",
+      "attachments": []
+    },
+    {
+      "id": "email_012",
+      "timestamp": "2025-11-03T11:35:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "David Park",
+        "email": "operations@lbterminal.com",
+        "role": "Terminal Operations Manager",
+        "organization": "Long Beach Container Terminal"
+      },
+      "subject": "RE: Schedule Change Request - MV Pacific Star - CONFIRMED YES",
+      "body": "Dear David,\n\nExcellent news! Captain Morrison has confirmed that early arrival is POSSIBLE.\n\nCONFIRMATION: YES - MV Pacific Star can arrive tomorrow\n\n=== REVISED SCHEDULE ===\nNew ETA: November 4, 2025, 09:00 hours PST (TOMORROW)\nPilot Boarding: November 4, 2025, 08:00 hours PST\nBerth Assignment: Berth E-7, Pier E Complex (unchanged)\n\nVESSEL STATUS:\n- Currently increasing speed to 19.5 knots\n- Captain confirms operational feasibility\n- All safety checks completed\n- No operational concerns\n- All documentation already submitted\n\nACTIONS TAKEN:\n✓ Captain confirmed and vessel speed increased\n✓ Port Authority approval requested (awaiting response)\n✓ CBP/Coast Guard early processing requested\n\nNEXT STEPS:\nCould you please confirm:\n1. Berth E-7 will be ready for 09:00 hours PST tomorrow\n2. Crane teams can be mobilized for tomorrow\n3. Yard space availability for early operations\n4. Any updated berthing instructions\n\nWe are working to get Port Authority approval urgently. Will update you as soon as confirmed.\n\nThank you for your patience. We're happy we could help with this emergency situation.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc\nMobile: +1-562-555-4567",
+      "priority": "urgent",
+      "attachments": []
+    },
+    {
+      "id": "email_013",
+      "timestamp": "2025-11-03T11:50:00Z",
+      "from": {
+        "name": "Sarah Williams",
+        "email": "s.williams@polb.com",
+        "role": "Port Operations Manager",
+        "organization": "Port of Long Beach Authority"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "RE: Schedule Change Request - MV Pacific Star - APPROVED",
+      "body": "Dear Michael,\n\nSchedule change has been APPROVED.\n\nUPDATED PORT ENTRY CLEARANCE:\nApproval Reference: POLB-2025-1145-AMENDED\nVessel: MV Pacific Star (IMO 9876543)\nRevised ETA: November 4, 2025, 09:00 hours PST\nRevised Pilot Boarding: November 4, 2025, 08:00 hours PST\nPilot Boarding Location: LA/Long Beach Pilot Station (33°42'N, 118°15'W)\nVHF Channel: 12 (unchanged)\n\nCOORDINATION COMPLETED:\n✓ Pilot arranged for 08:00 hours PST tomorrow\n✓ Vessel Traffic Services notified\n✓ U.S. Customs and Border Protection expedited processing approved\n✓ U.S. Coast Guard early inspection scheduled\n✓ Port Health Authority notified\n\nPilot Captain Rodriguez will board at 08:00 hours PST as requested. All pre-arrival requirements remain the same.\n\nPlease ensure Captain Morrison:\n1. Maintains VHF Channel 12\n2. Reports to VTS when 10 miles from pilot station\n3. Has pilot ladder ready on starboard side\n\nApproval valid for emergency schedule change. Original documentation remains applicable.\n\nBest regards,\nSarah Williams\nPort Operations Manager\nPort of Long Beach Authority\nDirect: +1-562-283-5678",
+      "priority": "urgent",
+      "attachments": [
+        "amended_port_clearance.pdf"
+      ]
+    },
+    {
+      "id": "email_014",
+      "timestamp": "2025-11-03T12:10:00Z",
+      "from": {
+        "name": "David Park",
+        "email": "operations@lbterminal.com",
+        "role": "Terminal Operations Manager",
+        "organization": "Long Beach Container Terminal"
+      },
+      "to": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "subject": "RE: MV Pacific Star - Updated Berth Details and Operations Plan",
+      "body": "Dear Michael,\n\nThank you for the quick response! We greatly appreciate Captain Morrison's flexibility.\n\nUPDATED BERTH ASSIGNMENT AND DETAILS:\n\n=== BERTH INFORMATION ===\nBerth: Berth E-7, Pier E Complex\nBerthing Time: November 4, 2025, 09:00 hours PST (CONFIRMED)\nMooring: 2 tugs assigned (Pacific Pride & Harbor Star)\nFenders: Pneumatic cell fenders in place\nBollards: 18 bollards available\n\n=== OPERATIONS PLAN ===\nCargo Operations Start: 10:00 hours PST (November 4)\nCrane Allocation: 3 x Super Post-Panamax Cranes (Crane E-4, E-5, E-6)\nGang Allocation: 3 gangs (ILWU full complement)\nShift Schedule: Continuous operations - 24 hours\nEstimated Completion: November 5, 04:00 hours PST\n\nYard Space: Stack Area E-15 to E-18 (ready and available)\nReach Stackers: 8 units assigned\nYard Tractors: 16 units assigned\nRailroad: On-dock rail available if needed\n\n=== ADDITIONAL SERVICES ===\n- Fresh water: Available at berth\n- Bunkering: Can be arranged with local suppliers\n- Waste disposal: Available (MARPOL compliant)\n- Ship chandler: Available on request\n\n=== SAFETY & SECURITY ===\nMTSA (Maritime Transportation Security Act) Compliance: Level 1\nSecurity Team: 3 officers assigned\nAccess Control: Gangway security 24/7\nTWIC (Transportation Worker ID) required for all personnel\n\nAll teams have been mobilized and are ready for the revised schedule. We have expedited all preparations.\n\nPlease provide to Captain Morrison:\n- Approach chart: Attached\n- Berth layout: Attached\n- Crane specifications: Attached\n\nThank you again for accommodating this emergency situation. Your cooperation is greatly appreciated!\n\nBest regards,\nDavid Park\nTerminal Operations Manager\nLong Beach Container Terminal\nDirect: +1-562-446-7890",
+      "priority": "high",
+      "attachments": [
+        "berth_e7_approach_chart.pdf",
+        "berth_e7_layout.pdf",
+        "crane_specifications.pdf",
+        "terminal_operations_plan.pdf"
+      ]
+    },
+    {
+      "id": "email_015",
+      "timestamp": "2025-11-03T12:30:00Z",
+      "from": {
+        "name": "Michael Chen",
+        "email": "michael.chen@westcoast-agents.com",
+        "role": "Local Agent",
+        "company": "West Coast Shipping Agents Inc"
+      },
+      "to": {
+        "name": "Captain James Morrison",
+        "email": "captain.morrison@oceanliner.com",
+        "role": "Captain",
+        "vessel": "MV Pacific Star"
+      },
+      "subject": "FINAL CONFIRMATION: All Approvals Received - Detailed Long Beach Berth Information",
+      "body": "Dear Captain Morrison,\n\nExcellent news! All approvals have been received. Everything is set for your early arrival at Long Beach.\n\n=== PORT OF LONG BEACH AUTHORITY - APPROVED ===\nUpdated Approval Reference: POLB-2025-1145-AMENDED\nPilot Boarding Time: TOMORROW (Nov 4), 08:00 hours PST\nPilot: Captain Rodriguez\nPilot Boarding Location: LA/Long Beach Pilot Station (33°42'N, 118°15'W)\nVHF Channel: 12\n**Please report to VTS when 10 miles from pilot station**\n\n=== TERMINAL - READY FOR OPERATIONS ===\nBerth: Berth E-7, Pier E Complex\nBerthing Time: 09:00 hours PST\nMooring Assistance: 2 tugs (Pacific Pride & Harbor Star)\nFenders: Pneumatic cell fenders\nBollards: 18 available\n\n=== CARGO OPERATIONS PLAN ===\nOperations Start: 10:00 hours PST\nCranes: 3 x Super Post-Panamax Cranes (E-4, E-5, E-6)\nGangs: 3 ILWU gangs assigned\nSchedule: Continuous 24-hour operations\nEstimated Completion: November 5, 04:00 hours PST\n\nYard Space: Stack Area E-15 to E-18\nEquipment: 8 reach stackers, 16 yard tractors\nRailroad: On-dock rail available\n\n=== ADDITIONAL SERVICES AVAILABLE ===\n✓ Fresh water at berth\n✓ Waste disposal (MARPOL compliant)\n✓ Bunkering (if needed)\n✓ Ship chandler services\n\n=== SECURITY ===\nMTSA Compliance: Level 1\nGangway Security: 24/7\nSecurity Officers: 3 assigned\nTWIC required for all personnel\n\n=== CLEARANCES COORDINATED ===\n✓ U.S. Customs and Border Protection - expedited processing\n✓ U.S. Coast Guard - early inspection scheduled\n✓ Port Health Authority - notified\n\nATTACHED DOCUMENTS:\n- Amended port clearance\n- Berth E-7 approach chart\n- Berth layout plan\n- Crane specifications\n- Terminal operations plan\n\nAll teams are ready and mobilized for your arrival. Safe passage across the Pacific and we look forward to welcoming MV Pacific Star to Long Beach!\n\nI will be at the terminal to meet you upon arrival.\n\nBest regards,\nMichael Chen\nWest Coast Shipping Agents Inc\nMobile: +1-562-555-4567\nOffice: +1-562-555-0123",
+      "priority": "high",
+      "attachments": [
+        "amended_port_clearance.pdf",
+        "berth_e7_approach_chart.pdf",
+        "berth_e7_layout.pdf",
+        "crane_specifications.pdf",
+        "terminal_operations_plan.pdf"
+      ]
+    }
+  ],
+  "metadata": {
+    "scenario": "Maritime Logistics AI Agent Demonstration",
+    "purpose": "Amazon Hackathon",
+    "vessel": "MV Pacific Star",
+    "imo_number": "IMO 9876543",
+    "route": "Singapore to Long Beach, California",
+    "departure_port": "Singapore",
+    "arrival_port": "Port of Long Beach, California, USA",
+    "original_eta": "2025-11-05T09:00:00-08:00",
+    "revised_eta": "2025-11-04T09:00:00-08:00",
+    "email_start_date": "2025-11-02 (3 days before original ETA)",
+    "emergency_situation": "MV Global Express engine failure requiring schedule adjustment",
+    "total_emails": 15,
+    "stakeholders": [
+      "Captain (MV Pacific Star)",
+      "Local Agent (West Coast Shipping Agents Inc)",
+      "Port of Long Beach Authority",
+      "Long Beach Container Terminal"
+    ],
+    "key_events": [
+      "Initial ETA request and coordination (Nov 2)",
+      "Port authority approval (Nov 2)",
+      "Terminal berth allocation (Nov 2)",
+      "Emergency schedule change request (Nov 3)",
+      "Vessel speed increase to accommodate early arrival (Nov 3)",
+      "Revised approvals and final confirmation (Nov 3)"
+    ],
+    "timeline": {
+      "day_1": "2025-11-02 - Initial coordination and approvals",
+      "day_2": "2025-11-03 - Emergency situation and schedule change",
+      "day_3": "2025-11-04 - Revised arrival (one day early)",
+      "day_4": "2025-11-05 - Original scheduled arrival date"
+    }
+  }
+}
