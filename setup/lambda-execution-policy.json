@@ -6,12 +6,19 @@
       "Effect": "Allow",
       "Action": [
         "bedrock:InvokeModel",
-        "bedrock:InvokeModelWithResponseStream"
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:GetFoundationModel",
+        "bedrock:ListFoundationModels"
       ],
-      "Resource": [
-        "arn:aws:bedrock:*::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0",
-        "arn:aws:bedrock:*::foundation-model/amazon.titan-embed-text-v1"
-      ]
+      "Resource": "*"
+    },
+    {
+      "Sid": "MarketplaceAccess",
+      "Effect": "Allow",
+      "Action": [
+        "aws-marketplace:ViewSubscriptions"
+      ],
+      "Resource": "*"
     },
     {
       "Sid": "DynamoDBAccess",

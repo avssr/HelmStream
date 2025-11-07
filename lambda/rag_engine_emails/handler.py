@@ -104,30 +104,29 @@ def retrieve_similar_emails(query_embedding, top_k=5, filters=None):
 
     # Build filter expression
     filter_expression = None
-    expression_values = {}
 
     if filters:
+        from boto3.dynamodb.conditions import Attr
         conditions = []
-        if 'vessel' in filters:
-            conditions.append('vessel_involved = :vessel')
-            expression_values[':vessel'] = filters['vessel']
-        if 'sender_role' in filters:
-            conditions.append('sender_role = :role')
-            expression_values[':role'] = filters['sender_role']
-        if 'month' in filters:
-            conditions.append('#month = :month')
-            expression_values[':month'] = filters['month']
-        if 'event_category' in filters:
-            conditions.append('event_category = :category')
-            expression_values[':category'] = filters['event_category']
 
+        if 'vessel' in filters:
+            conditions.append(Attr('vessel_involved').eq(filters['vessel']))
+        if 'sender_role' in filters:
+            conditions.append(Attr('sender_role').eq(filters['sender_role']))
+        if 'month' in filters:
+            conditions.append(Attr('month').eq(filters['month']))
+        if 'event_category' in filters:
+            conditions.append(Attr('event_category').eq(filters['event_category']))
+
+        # Combine conditions with AND
         if conditions:
-            from boto3.dynamodb.conditions import Attr
-            filter_expression = eval(' & '.join([f"Attr('{c.split(' = ')[0]}').eq({c.split(' = ')[1]})" for c in conditions]))
+            filter_expression = conditions[0]
+            for condition in conditions[1:]:
+                filter_expression = filter_expression & condition
 
     # Scan with filters
     scan_kwargs = {}
-    if filter_expression:
+    if filter_expression is not None:
         scan_kwargs['FilterExpression'] = filter_expression
 
     response = table.scan(**scan_kwargs)

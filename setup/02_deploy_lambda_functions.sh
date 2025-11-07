@@ -74,12 +74,16 @@ deploy_lambda() {
     # Check if function exists
     if aws lambda get-function --function-name "$FUNCTION_NAME" --region "$AWS_REGION" &> /dev/null; then
         # Update existing function
-        echo "  → Updating existing function..."
+        echo "  → Updating existing function code..."
         aws lambda update-function-code \
             --function-name "$FUNCTION_NAME" \
             --zip-file fileb://function.zip \
             --region "$AWS_REGION" > /dev/null
 
+        echo "  → Waiting for function to be ready..."
+        aws lambda wait function-updated --function-name "$FUNCTION_NAME" --region "$AWS_REGION"
+
+        echo "  → Updating function configuration..."
         aws lambda update-function-configuration \
             --function-name "$FUNCTION_NAME" \
             --handler "$HANDLER" \
@@ -169,17 +173,26 @@ echo "🧪 Testing Lambda functions..."
 echo ""
 
 echo "Testing email processor..."
+# Create test payload file
+cat > /tmp/test-email-payload.json << 'EOF'
+{"email":{"date":"2025-06-01","time":"08:00","sender":"Test User","sender_role":"Local Agent","recipients":["User 2"],"subject":"Test Email","body":"This is a test email for the HelmStream shipyard system","email_type":"test","month":"06","vessel_involved":"MV Test Vessel","event_category":"test"}}
+EOF
+
 aws lambda invoke \
     --function-name helmstream-email-processor \
-    --payload '{"email":{"date":"2025-06-01","time":"08:00","sender":"Test User","sender_role":"Local Agent","recipients":["User 2"],"subject":"Test Email","body":"This is a test email","email_type":"test","month":"06","vessel_involved":"MV Test Vessel","event_category":"test"}}' \
+    --cli-binary-format raw-in-base64-out \
+    --payload file:///tmp/test-email-payload.json \
     --region "$AWS_REGION" \
     /tmp/test-email-output.json > /dev/null
 
 if [ $? -eq 0 ]; then
     echo "✓ Email processor test passed"
-    cat /tmp/test-email-output.json | python3 -m json.tool | head -10
+    echo ""
+    echo "Response:"
+    cat /tmp/test-email-output.json | python3 -m json.tool
 else
     echo "❌ Email processor test failed"
+    cat /tmp/test-email-output.json
 fi
 echo ""
 
