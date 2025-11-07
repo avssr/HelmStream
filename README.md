@@ -136,14 +136,66 @@ This MVP leverages AWS free tier services to minimize costs while providing powe
 
 **Total MVP Cost: ~$5-30/month** (mostly Bedrock API usage)
 
+## 📚 Documentation
+
+All documentation is organized in the `docs/` folder:
+
+### 📖 Setup Guides
+- **[QUICKSTART.md](docs/setup/QUICKSTART.md)** - Quick setup guide
+- **[SHIPYARD-SETUP.md](docs/setup/SHIPYARD-SETUP.md)** - Detailed shipyard email system setup
+
+### 🎬 Demo & Presentation
+- **[HACKATHON-DEMO.md](docs/demo/HACKATHON-DEMO.md)** - Complete 5-minute hackathon demo guide
+- **[QUICK-REFERENCE.md](docs/demo/QUICK-REFERENCE.md)** - Quick reference card (print-friendly)
+- **[POSTMAN-GUIDE.md](docs/demo/POSTMAN-GUIDE.md)** - Complete Postman testing guide
+- **[POSTMAN-QUICKSTART.md](docs/demo/POSTMAN-QUICKSTART.md)** - 3-minute Postman setup
+
+### 🔧 Technical Documentation
+- **[architecture.md](docs/technical/architecture.md)** - System architecture and design
+- **[CLAUDE.md](docs/technical/CLAUDE.md)** - Claude Code implementation details
+- **[agent-implementation.md](docs/technical/agent-implementation.md)** - Agent design patterns
+
+### 📊 Status & Reference
+- **[SYSTEM-STATUS.md](docs/reference/SYSTEM-STATUS.md)** - Complete system status report
+- **[FINAL-VERIFICATION.md](docs/reference/FINAL-VERIFICATION.md)** - System verification checklist
+
+### 🔒 Security
+- **[SECURITY-NOTES.md](SECURITY-NOTES.md)** - Security best practices and API key management
+
 ## Getting Started
 
-1. Set up AWS account and configure free tier alerts
-2. Deploy infrastructure using AWS SAM or CDK
-3. Configure Gmail API credentials
-4. Upload maritime domain documents to S3
-5. Install frontend dependencies: `npm install`
-6. Start development server: `npm run dev`
-7. Test RAG pipeline with sample queries
-8. Configure agentic workflows
-9. Monitor costs in AWS Cost Explorer
+### Quick Start (5 minutes)
+
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url>
+   cd HelmStream
+   ```
+
+2. **Set up AWS infrastructure**
+   ```bash
+   cd setup
+   ./01_setup_aws_resources.sh
+   ./02_deploy_lambda_functions.sh
+   ./03_create_api_gateway.sh
+   ./04_add_authentication.sh
+   ```
+
+3. **Ingest shipyard data**
+   ```bash
+   python3 ingest_shipyard_emails.py
+   ```
+
+4. **Test the system**
+   ```bash
+   python3 test_shipyard_queries.py
+   python3 test_crisis_agent.py
+   ```
+
+5. **Start the frontend** (optional)
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+For detailed instructions, see [docs/setup/QUICKSTART.md](docs/setup/QUICKSTART.md)
