@@ -1,4 +1,4 @@
-# HealmStream
+# HelmStream
 Amazon Hackathon Nov '25 - Maritime Operations Orchestrator
 
 AWS Bedrock Hackathon Project - An intelligent maritime workflow automation system with agentic AI and RAG-powered Gmail integration.
