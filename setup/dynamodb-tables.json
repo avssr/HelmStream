@@ -1,0 +1,93 @@
+{
+  "tables": [
+    {
+      "TableName": "helmstream-documents",
+      "Description": "Stores maritime documents with embeddings for RAG",
+      "AttributeDefinitions": [
+        {
+          "AttributeName": "document_id",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "type",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "created_at",
+          "AttributeType": "S"
+        }
+      ],
+      "KeySchema": [
+        {
+          "AttributeName": "document_id",
+          "KeyType": "HASH"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "type-created-index",
+          "KeySchema": [
+            {
+              "AttributeName": "type",
+              "KeyType": "HASH"
+            },
+            {
+              "AttributeName": "created_at",
+              "KeyType": "RANGE"
+            }
+          ],
+          "Projection": {
+            "ProjectionType": "ALL"
+          },
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": 5,
+            "WriteCapacityUnits": 5
+          }
+        }
+      ],
+      "BillingMode": "PAY_PER_REQUEST",
+      "Fields": {
+        "document_id": "String - Unique document identifier",
+        "type": "String - Document type (invoice, port_report, certificate, etc.)",
+        "title": "String - Document title",
+        "s3_uri": "String - S3 location of the document",
+        "metadata": "Map - Additional document metadata (vendor, date, amount, etc.)",
+        "embedding": "List of Numbers - 768-dimensional Titan embedding",
+        "created_at": "String - ISO8601 timestamp",
+        "text_preview": "String - First 500 characters for quick display"
+      }
+    },
+    {
+      "TableName": "helmstream-conversations",
+      "Description": "Stores chat conversation history",
+      "AttributeDefinitions": [
+        {
+          "AttributeName": "conversation_id",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "timestamp",
+          "AttributeType": "S"
+        }
+      ],
+      "KeySchema": [
+        {
+          "AttributeName": "conversation_id",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "timestamp",
+          "KeyType": "RANGE"
+        }
+      ],
+      "BillingMode": "PAY_PER_REQUEST",
+      "Fields": {
+        "conversation_id": "String - Unique conversation identifier",
+        "timestamp": "String - ISO8601 timestamp",
+        "role": "String - user or assistant",
+        "message": "String - Message content",
+        "sources": "List - Referenced documents for this turn"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "Rules": [
+    {
+      "Id": "ArchiveOldDocuments",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": "documents/"
+      },
+      "Transitions": [
+        {
+          "Days": 90,
+          "StorageClass": "STANDARD_IA"
+        },
+        {
+          "Days": 180,
+          "StorageClass": "GLACIER_IR"
+        }
+      ]
+    },
+    {
+      "Id": "DeleteOldLogs",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": "logs/"
+      },
+      "Expiration": {
+        "Days": 30
+      }
+    }
+  ]
+}
