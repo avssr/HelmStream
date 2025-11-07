@@ -1,7 +1,7 @@
 {
   "Rules": [
     {
-      "Id": "ArchiveOldDocuments",
+      "ID": "ArchiveOldDocuments",
       "Status": "Enabled",
       "Filter": {
         "Prefix": "documents/"
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "Id": "DeleteOldLogs",
+      "ID": "DeleteOldLogs",
       "Status": "Enabled",
       "Filter": {
         "Prefix": "logs/"

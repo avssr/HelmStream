@@ -35,8 +35,21 @@ deploy_lambda() {
 
     echo "📦 Deploying $FUNCTION_NAME..."
 
+    # Map function names to directory names
+    case "$FUNCTION_NAME" in
+        "helmstream-email-processor")
+            DIR_NAME="email_processor"
+            ;;
+        "helmstream-rag-engine-emails")
+            DIR_NAME="rag_engine_emails"
+            ;;
+        *)
+            DIR_NAME="$FUNCTION_NAME"
+            ;;
+    esac
+
     # Navigate to function directory
-    cd "$SCRIPT_DIR/../lambda/$FUNCTION_NAME"
+    cd "$SCRIPT_DIR/../lambda/$DIR_NAME"
 
     # Create deployment package
     echo "  → Creating deployment package..."
@@ -45,7 +58,7 @@ deploy_lambda() {
 
     # Install dependencies if requirements.txt exists
     if [ -f "requirements.txt" ]; then
-        pip install -r requirements.txt -t package/ --quiet
+        pip3 install -r requirements.txt -t package/ --quiet --upgrade
         echo "  → Dependencies installed"
     fi
 
@@ -74,12 +87,10 @@ deploy_lambda() {
             --timeout "$TIMEOUT" \
             --memory-size "$MEMORY" \
             --environment "Variables={
-                AWS_REGION=$AWS_REGION,
-                DYNAMODB_TABLE_NAME=$DYNAMODB_TABLE_NAME,
+                DYNAMODB_TABLE_NAME=helmstream-emails,
                 S3_BUCKET_NAME=$S3_BUCKET_NAME,
                 BEDROCK_CLAUDE_MODEL_ID=$BEDROCK_CLAUDE_MODEL_ID,
-                BEDROCK_TITAN_EMBED_MODEL_ID=$BEDROCK_TITAN_EMBED_MODEL_ID,
-                CONVERSATIONS_TABLE_NAME=helmstream-conversations
+                BEDROCK_TITAN_EMBED_MODEL_ID=$BEDROCK_TITAN_EMBED_MODEL_ID
             }" \
             --region "$AWS_REGION" > /dev/null
 
@@ -97,12 +108,10 @@ deploy_lambda() {
             --memory-size "$MEMORY" \
             --description "$DESCRIPTION" \
             --environment "Variables={
-                AWS_REGION=$AWS_REGION,
-                DYNAMODB_TABLE_NAME=$DYNAMODB_TABLE_NAME,
+                DYNAMODB_TABLE_NAME=helmstream-emails,
                 S3_BUCKET_NAME=$S3_BUCKET_NAME,
                 BEDROCK_CLAUDE_MODEL_ID=$BEDROCK_CLAUDE_MODEL_ID,
-                BEDROCK_TITAN_EMBED_MODEL_ID=$BEDROCK_TITAN_EMBED_MODEL_ID,
-                CONVERSATIONS_TABLE_NAME=helmstream-conversations
+                BEDROCK_TITAN_EMBED_MODEL_ID=$BEDROCK_TITAN_EMBED_MODEL_ID
             }" \
             --region "$AWS_REGION" > /dev/null
 
@@ -116,62 +125,61 @@ deploy_lambda() {
     echo ""
 }
 
+# Create emails DynamoDB table if it doesn't exist
+echo "📊 Creating emails DynamoDB table..."
+EMAILS_TABLE_NAME="helmstream-emails"
+if ! aws dynamodb describe-table --table-name "$EMAILS_TABLE_NAME" --region "$AWS_REGION" &> /dev/null; then
+    aws dynamodb create-table \
+        --table-name "$EMAILS_TABLE_NAME" \
+        --attribute-definitions \
+            AttributeName=email_id,AttributeType=S \
+        --key-schema \
+            AttributeName=email_id,KeyType=HASH \
+        --billing-mode PAY_PER_REQUEST \
+        --region "$AWS_REGION" > /dev/null
+
+    echo "✓ Emails table created"
+else
+    echo "⚠️  Emails table already exists"
+fi
+echo ""
+
 # Deploy Lambda functions
 echo "Deploying Lambda functions..."
 echo ""
 
-# 1. Document Processor
+# 1. Email Processor (for shipyard emails)
 deploy_lambda \
-    "helmstream-document-processor" \
+    "helmstream-email-processor" \
     "handler.lambda_handler" \
     1024 \
     300 \
-    "Process documents and generate embeddings"
+    "Process shipyard emails with stakeholder metadata"
 
-# 2. RAG Query Engine
+# 2. RAG Query Engine (for stakeholder-aware queries)
 deploy_lambda \
-    "helmstream-rag-engine" \
+    "helmstream-rag-engine-emails" \
     "handler.lambda_handler" \
     1024 \
     60 \
-    "RAG query engine with Bedrock Claude"
-
-# Create conversations table if it doesn't exist
-echo "📊 Creating conversations table..."
-if ! aws dynamodb describe-table --table-name "helmstream-conversations" --region "$AWS_REGION" &> /dev/null; then
-    aws dynamodb create-table \
-        --table-name "helmstream-conversations" \
-        --attribute-definitions \
-            AttributeName=conversation_id,AttributeType=S \
-            AttributeName=timestamp,AttributeType=S \
-        --key-schema \
-            AttributeName=conversation_id,KeyType=HASH \
-            AttributeName=timestamp,KeyType=RANGE \
-        --billing-mode PAY_PER_REQUEST \
-        --region "$AWS_REGION" > /dev/null
-
-    echo "✓ Conversations table created"
-else
-    echo "⚠️  Conversations table already exists"
-fi
-echo ""
+    "Stakeholder-aware RAG query engine"
 
 # Test Lambda functions
 echo "🧪 Testing Lambda functions..."
 echo ""
 
-echo "Testing document processor..."
+echo "Testing email processor..."
 aws lambda invoke \
-    --function-name helmstream-document-processor \
-    --payload '{"text":"Test document for MV Ocean Star","type":"test","title":"Test Document"}' \
+    --function-name helmstream-email-processor \
+    --payload '{"email":{"date":"2025-06-01","time":"08:00","sender":"Test User","sender_role":"Local Agent","recipients":["User 2"],"subject":"Test Email","body":"This is a test email","email_type":"test","month":"06","vessel_involved":"MV Test Vessel","event_category":"test"}}' \
     --region "$AWS_REGION" \
-    /tmp/test-doc-output.json > /dev/null
+    /tmp/test-email-output.json > /dev/null
 
 if [ $? -eq 0 ]; then
-    echo "✓ Document processor test passed"
-    cat /tmp/test-doc-output.json | python3 -m json.tool | head -10
+    echo "✓ Email processor test passed"
+    cat /tmp/test-email-output.json | python3 -m json.tool | head -10
 else
-    echo "❌ Document processor test failed"
+    echo "❌ Email processor test failed"
 fi
 echo ""
 
@@ -180,23 +188,26 @@ echo "============================================"
 echo "✅ Deployment Complete!"
 echo "============================================"
 echo "Lambda functions deployed:"
-echo "  • helmstream-document-processor (1024MB, 300s timeout)"
-echo "  • helmstream-rag-engine (1024MB, 60s timeout)"
+echo "  • helmstream-email-processor (1024MB, 300s timeout)"
+echo "  • helmstream-rag-engine-emails (1024MB, 60s timeout)"
+echo ""
+echo "DynamoDB table created:"
+echo "  • $EMAILS_TABLE_NAME"
 echo ""
 echo "Next steps:"
-echo "  1. Run: ./03_create_api_gateway.sh"
-echo "  2. Test the RAG pipeline with sample documents"
+echo "  1. Run: python3 ingest_shipyard_emails.py"
+echo "  2. Run: python3 test_shipyard_queries.py"
 echo "  3. Monitor costs in CloudWatch"
 echo ""
 echo "Function ARNs:"
 aws lambda get-function \
-    --function-name helmstream-document-processor \
+    --function-name helmstream-email-processor \
     --region "$AWS_REGION" \
     --query 'Configuration.FunctionArn' \
     --output text
 
 aws lambda get-function \
-    --function-name helmstream-rag-engine \
+    --function-name helmstream-rag-engine-emails \
     --region "$AWS_REGION" \
     --query 'Configuration.FunctionArn' \
     --output text

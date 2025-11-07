@@ -78,7 +78,7 @@ if ! aws dynamodb describe-table --table-name "$TABLE_NAME" --region "$AWS_REGIO
         --key-schema \
             AttributeName=document_id,KeyType=HASH \
         --global-secondary-indexes \
-            "IndexName=type-created-index,KeySchema=[{AttributeName=type,KeyType=HASH},{AttributeName=created_at,KeyType=RANGE}],Projection={ProjectionType=ALL},ProvisionedThroughput={ReadCapacityUnits=5,WriteCapacityUnits=5}" \
+            "IndexName=type-created-index,KeySchema=[{AttributeName=type,KeyType=HASH},{AttributeName=created_at,KeyType=RANGE}],Projection={ProjectionType=ALL}" \
         --billing-mode PAY_PER_REQUEST \
         --region "$AWS_REGION"
 
